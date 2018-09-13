@@ -25,9 +25,9 @@ export class Game {
     nextMove(): void {
         let nextMovingPlayer = this.getNextMovingPlayer();
         let turnEnded = false;
+        nextMovingPlayer.rollTheDice();
         while (!turnEnded) {
-            nextMovingPlayer.rollTheDice();
-            turnEnded = this.boardController.checkTile((nextMovingPlayer.points);
+            turnEnded = this.boardController.checkTile((nextMovingPlayer.points));
             if (this.boardController.tileIsNormal(nextMovingPlayer.points)) { turnEnded = true; }
         }
         console.table(this.getLeaderBoard());

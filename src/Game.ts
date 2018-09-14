@@ -8,8 +8,8 @@ export class Game {
     private players: Player[] = [];
     private lastEntryNumber: number = 0;
 
-    constructor(boardController: BoardController) {
-        this.boardController = boardController;
+    constructor() {
+        this.boardController = new BoardController();
     }
 
     addPlayer(player: Player): void {
@@ -23,17 +23,16 @@ export class Game {
     }
 
     nextMove(): void {
-        let nextMovingPlayer = this.getNextMovingPlayer();
+        let currentMovingPlayer = this.getCurrentMovingPlayer();
         let turnEnded = false;
-        nextMovingPlayer.rollTheDice();
+        currentMovingPlayer.rollTheDice();
         while (!turnEnded) {
-            turnEnded = this.boardController.checkTile((nextMovingPlayer.points));
-            if (this.boardController.tileIsNormal(nextMovingPlayer.points)) { turnEnded = true; }
+            turnEnded = this.boardController.checkTile(currentMovingPlayer);
         }
         console.table(this.getLeaderBoard());
     }
 
-    getNextMovingPlayer(): Player {
+    getCurrentMovingPlayer(): Player {
         return first(orderBy(this.players, ['currentTurn', 'entryOrder'], ['asc', 'asc']));
     }
 

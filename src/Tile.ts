@@ -1,6 +1,8 @@
+import { Player } from "./Player";
+
 export class Tile {
 
-    handleMove() {
+    handleMove(player: Player): boolean {
 
         return true;
 

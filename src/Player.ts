@@ -1,6 +1,6 @@
 import { PlayerTypes } from './PlayerTypes';
 import { Utils } from './Utils';
-import { sum } from "lodash";
+import { sum, last } from "lodash";
 
 export class Player {
 
@@ -39,6 +39,10 @@ export class Player {
 
     updateDiceRollsHistory(lastDiceRoll: number[]): void {
         this.diceRollsHistory.push(lastDiceRoll);
+    }
+
+    replayLastDiceRoll() {
+        this.addPoints(this.sumDiceRoll(last(this.diceRollsHistory)));
     }
 
 }

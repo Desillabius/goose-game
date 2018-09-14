@@ -1,19 +1,22 @@
 import { Tiles } from './Board';
 import { TileFactory } from './TileFactory';
+import { Player } from './Player';
 
 export class BoardController {
 
-    private tileFactory: TileFactory
+    private tileFactory: TileFactory;
 
-    constructor(tileFactory: TileFactory) {
+    constructor() {
 
-        this.tileFactory = tileFactory;
+        this.tileFactory = new TileFactory();
 
     }
 
-    checkTile(tileNumber: number) {
+    checkTile(player: Player) {
 
-        let currentTile = this.tileFactory.createTile(Tiles[tileNumber]);
+        let currentTile = this.tileFactory.createTile(Tiles[player.points].type);
+
+        return currentTile.handleMove();
 
     }
 

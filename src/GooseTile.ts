@@ -1,10 +1,13 @@
 import { Tile } from './Tile';
+import { Player } from './Player';
 
 export class GooseTile extends Tile {
 
-    handleMove() {
+    handleMove(player: Player) {
 
-        return true;
+        player.replayLastDiceRoll();
+
+        return false;
 
     }
 

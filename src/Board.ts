@@ -1,133 +1,118 @@
+import { TilesType } from "./TilesType";
+
 export const Tiles = [
     {
         id: 1,
-        type: 'normal',
-        callback: null
+        type: TilesType.Harmless
     },
     {
         id: 2,
-        type: 'normal',
-        callback: null
+        type: TilesType.Harmless
     },
     {
         id: 3,
-        type: 'normal',
-        callback: null
+        type: TilesType.Harmless
     },
     {
         id: 4,
-        type: 'normal',
-        callback: null
+        type: TilesType.Harmless
+        
     },
     {
         id: 5,
-        type: 'goose',
-        callback: 'replayLastDiceRoll'
+        type: TilesType.Goose
     },
     {
         id: 6,
-        type: 'bridge',
-        callback: 'jumpTo(12)'
+        type: TilesType.Bridge
     },
     {
         id: 7,
-        type: 'normal',
-        callback: null
+        type: TilesType.Harmless
+        
     },
     {
         id: 8,
-        name: 'normal',
-        callback: null
+        name: TilesType.Harmless
+        
     },
     {
         id: 9,
-        type: 'goose',
-        callback: 'replayLastDiceRoll'
+        type: TilesType.Goose
     },
     {
         id: 10,
-        type: 'normal',
-        callback: null
+        type: TilesType.Harmless
     },
     {
         id: 11,
-        type: 'normal',
-        callback: null
+        type: TilesType.Harmless
     },
     {
         id: 12,
-        type: 'normal',
-        callback: null
+        type: TilesType.Harmless
     },
     {
         id: 13,
-        type: 'normal',
-        callback: null
+        type: TilesType.Harmless
     },
     {
         id: 14,
-        type: 'goose',
-        callback: 'replayLastDiceRoll'
+        type: TilesType.Goose
     },
     {
         id: 15,
-        type: 'normal',
-        callback: null
+        type: TilesType.Harmless
     },
     {
         id: 16,
-        type: 'normal',
-        callback: null
+        type: TilesType.Harmless
     },
     {
         id: 17,
-        type: 'normal',
-        callback: null
+        type: TilesType.Harmless
     },
     {
         id: 18,
-        type: 'goose',
-        callback: 'replayLastDiceRoll'
+        type: TilesType.Goose
     },
     {
         id: 19,
-        type: 'inn',
-        callback: 'loseTurns(2)'
+        type: TilesType.Harmless
     },
     {
         id: 20,
-        type: 'normal',
-        callback: null
+        type: TilesType.Harmless
+        
     },
     {
         id: 21,
-        type: 'normal',
-        callback: null
+        type: TilesType.Harmless
+        
     },
     {
         id: 22,
-        type: 'normal',
-        callback: null
+        type: TilesType.Harmless
+        
     },
     {
         id: 23,
-        type: 'goose',
-        callback: 'replayLastDiceRoll'
+        type: TilesType.Goose
     },
     {
         id: 24,
-        type: 'normal',
-        callback: null
+        type: TilesType.Harmless
+        
     },
     {
         id: 25,
-        type: 'normal',
-        callback: null
+        type: TilesType.Harmless
+        
     },
     {
         id: 26,
-        type: 'normal',
-        callback: null
+        type: TilesType.Harmless
+        
     },
     {
         id: 27,
@@ -136,18 +121,18 @@ export const Tiles = [
     },
     {
         id: 28,
-        type: 'normal',
-        callback: null
+        type: TilesType.Harmless,
+        
     },
     {
         id: 29,
-        type: 'normal',
-        callback: null
+        type: TilesType.Harmless,
+        
     },
     {
         id: 30,
-        type: 'normal',
-        callback: null
+        type: TilesType.Harmless,
+        
     },
     {
         id: 31,
@@ -156,53 +141,53 @@ export const Tiles = [
     },
     {
         id: 32,
-        type: 'normal',
-        callback: null
+        type: TilesType.Harmless,
+        
     },
     {
         id: 33,
-        type: 'normal',
-        callback: null
+        type: TilesType.Harmless,
+        
     },
     {
         id: 34,
-        type: 'normal',
-        callback: null
+        type: TilesType.Harmless,
+        
     },
     {
         id: 35,
-        type: 'normal',
-        callback: null
+        type: TilesType.Harmless,
+        
     },
     {
         id: 36,
-        type: 'normal',
-        callback: null
+        type: TilesType.Harmless,
+        
     },
     {
         id: 37,
-        type: 'normal',
-        callback: null
+        type: TilesType.Harmless,
+        
     },
     {
         id: 38,
-        type: 'normal',
-        callback: null
+        type: TilesType.Harmless,
+        
     },
     {
         id: 39,
-        type: 'normal',
-        callback: null
+        type: TilesType.Harmless,
+        
     },
     {
         id: 40,
-        type: 'normal',
-        callback: null
+        type: TilesType.Harmless,
+        
     },
     {
         id: 41,
-        type: 'normal',
-        callback: null
+        type: TilesType.Harmless,
+        
     },
     {
         id: 42,
@@ -211,107 +196,104 @@ export const Tiles = [
     },
     {
         id: 43,
-        type: 'normal',
-        callback: null
+        type: TilesType.Harmless
+        
     },
     {
         id: 44,
-        type: 'normal',
-        callback: null
+        type: TilesType.Harmless
+        
     },
     {
         id: 45,
-        type: 'goose',
-        callback: 'replayLastDiceRoll'
+        type: TilesType.Goose
     },
     {
         id: 46,
-        type: 'normal',
-        callback: null
+        type: TilesType.Harmless
+        
     },
     {
         id: 47,
-        type: 'normal',
-        callback: null
+        type: TilesType.Harmless
+        
     },
     {
         id: 48,
-        type: 'normal',
-        callback: null
+        type: TilesType.Harmless
+        
     },
     {
         id: 49,
-        type: 'normal',
-        callback: null
+        type: TilesType.Harmless
+        
     },
     {
         id: 50,
-        type: 'normal',
-        callback: null
+        type: TilesType.Harmless
+        
     },
     {
         id: 51,
-        type: 'normal',
-        callback: null
+        type: TilesType.Harmless
+        
     },
     {
         id: 52,
-        type: 'normal',
-        callback: null
+        type: TilesType.Harmless
+        
     },
     {
         id: 53,
-        type: 'normal',
-        callback: null
+        type: TilesType.Harmless
+        
     },
     {
         id: 54,
-        type: 'normal',
-        callback: null
+        type: TilesType.Harmless
+        
     },
     {
         id: 55,
-        type: 'normal',
-        callback: null
+        type: TilesType.Harmless
+        
     },
     {
         id: 56,
-        type: 'normal',
-        callback: null
+        type: TilesType.Harmless
+        
     },
     {
         id: 57,
-        type: 'normal',
-        callback: null
+        type: TilesType.Harmless
+        
     },
     {
         id: 58,
-        type: 'death',
-        callback: 'startOver'
+        type: TilesType.Harmless
     },
     {
         id: 59,
-        type: 'goose',
-        callback: 'replayLastDiceRoll'
+        type: TilesType.Goose
     },
     {
         id: 60,
-        type: 'normal',
-        callback: null
+        type: TilesType.Harmless
+        
     },
     {
         id: 61,
-        type: 'normal',
-        callback: null
+        type: TilesType.Harmless
+        
     },
     {
         id: 62,
-        type: 'normal',
-        callback: null
+        type: TilesType.Harmless
+        
     },
     {
         id: 63,
-        type: 'normal',
-        callback: null
+        type: TilesType.Harmless
+        
     }
 ]

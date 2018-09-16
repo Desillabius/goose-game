@@ -18,8 +18,11 @@ export class Game {
         this.players.push(player);
     }
 
-    getLeaderBoard(): Player[] {
-        return orderBy(this.players, ['points'], ['desc']);
+    printLeaderBoard() {
+        let leaderBoard = this.getLeaderBoard();
+        for (let player of leaderBoard) {
+            console.log(player.name, player.points);
+        }
     }
 
     nextMove(): void {
@@ -29,10 +32,13 @@ export class Game {
         while (!turnEnded) {
             turnEnded = this.boardController.checkTile(currentMovingPlayer);
         }
-        console.table(this.getLeaderBoard());
     }
 
-    getCurrentMovingPlayer(): Player {
+    private getLeaderBoard(): Player[] {
+        return orderBy(this.players, ['points'], ['desc']);
+    }
+
+    private getCurrentMovingPlayer(): Player {
         return first(orderBy(this.players, ['currentTurn', 'entryOrder'], ['asc', 'asc']));
     }
 

@@ -1,12 +1,13 @@
 import { Tile } from './Tile';
+import { Player } from './Player';
 
 export class HarmlessTile extends Tile {
 
-    handleMove() {
+    handleMove(player: Player): boolean {
 
-        //this.player.replayLastDiceRoll();
+        super.handleMove(player);
 
-        return false;
+        return true;
 
     }
 

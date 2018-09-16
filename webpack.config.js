@@ -4,6 +4,7 @@ module.exports = {
     output: {
         filename: "bundle.js"
     },
+    devtool: 'source-map',
     resolve: {
         // Add `.ts` and `.tsx` as a resolvable extension.
         extensions: [".ts", ".tsx", ".js"]

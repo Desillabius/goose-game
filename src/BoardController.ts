@@ -16,13 +16,13 @@ export class BoardController {
 
         let currentTile = this.tileFactory.createTile(Tiles[player.points].type);
 
-        return currentTile.handleMove();
+        console.log(player.name, player.sumDiceRoll(player.lastDiceRoll));
 
-    }
+        let test = currentTile.handleMove(player);
 
-    tileIsNormal(tileNumber: number): boolean {
+        debugger;
 
-        return Tiles[tileNumber].type == 'normal';
+        return test;
 
     }
 

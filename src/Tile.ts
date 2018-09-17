@@ -23,7 +23,7 @@ export class Tile {
 
     private checkForPresentPlayer(player: Player): boolean {
 
-        return Tiles[player.points].currentPlayer != null;
+        return Tiles[player.points].currentPlayer instanceof Player;
 
     }
 

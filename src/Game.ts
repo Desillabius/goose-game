@@ -1,6 +1,7 @@
 import { Player } from './Player';
 import { BoardController } from './BoardController';
 import { first, orderBy } from "lodash";
+import { PlayerTypes } from './PlayerTypes';
 
 export class Game {
 
@@ -12,8 +13,9 @@ export class Game {
         this.boardController = new BoardController();
     }
 
-    addPlayer(player: Player): void {
+    addPlayer(name: string): void {
         this.lastEntryNumber++;
+        let player = new Player(PlayerTypes.human, name);
         player.entryOrder = this.lastEntryNumber;
         this.players.push(player);
     }

@@ -12,7 +12,7 @@ export class BoardController {
 
     }
 
-    checkTile(player: Player) {
+    checkTile(player: Player): boolean {
 
         let currentTile = this.tileFactory.createTile(Tiles[player.points].type);
 

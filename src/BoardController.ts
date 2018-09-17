@@ -1,25 +1,28 @@
 import { Tiles } from './Board';
 import { TileFactory } from './TileFactory';
+import { Player } from './Player';
 
 export class BoardController {
 
-    private tileFactory: TileFactory
+    private tileFactory: TileFactory;
 
-    constructor(tileFactory: TileFactory) {
+    constructor() {
 
-        this.tileFactory = tileFactory;
-
-    }
-
-    checkTile(tileNumber: number) {
-
-        let currentTile = this.tileFactory.createTile(Tiles[tileNumber]);
+        this.tileFactory = new TileFactory();
 
     }
 
-    tileIsNormal(tileNumber: number): boolean {
+    checkTile(player: Player) {
 
-        return Tiles[tileNumber].type == 'normal';
+        let currentTile = this.tileFactory.createTile(Tiles[player.points].type);
+
+        console.log(player.name, player.sumDiceRoll(player.lastDiceRoll));
+
+        let test = currentTile.handleMove(player);
+
+        debugger;
+
+        return test;
 
     }
 

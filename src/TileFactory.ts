@@ -1,19 +1,23 @@
-import { Tile } from './Tile';
+import { HarmlessTile } from './HarmlessTile';
 import { GooseTile } from './GooseTile';
+import { SwapPlayerTile } from "./SwapPlayerTile";
+import { BridgeTile } from "./BridgeTile";
+import { TilesType } from './TilesType';
+import { Tile } from './Tile';
 
 export class TileFactory {
 
-    createTile(type: Object);
-    createTile(type: 'normal'): NormalTile;
-    createTile(type: 'goose'): Villain;
-
-    public createTile(tileOptions): Tile | Goose {
-        if (tileOptions.type === "tile") {
-            return new Tile();
-        } else if (tileOptions.type === "goose") {
+    public createTile(type: TilesType): Tile {
+        if (type === TilesType.Harmless) {
+            return new HarmlessTile();
+        } else if (type === TilesType.Goose) {
             return new GooseTile();
-        } else {
-            throw new Error('Select either a Tile or a Goose');
+        } else if (type === TilesType.SwapPlayer) {
+            return new SwapPlayerTile();
+        } else if (type === TilesType.Bridge) {
+            return new BridgeTile();
         }
+        return null;
     }
+
 }

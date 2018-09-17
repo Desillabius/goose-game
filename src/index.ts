@@ -1,9 +1,8 @@
 import { Game } from './Game';
 import { Player } from './Player';
 import { PlayerTypes } from './PlayerTypes';
-import { BoardController } from './BoardController';
 
-const game = new Game(new BoardController);
+const game = new Game();
 
 game.addPlayer(new Player(PlayerTypes.human, 'Marco'));
 game.addPlayer(new Player(PlayerTypes.human, 'Giulia'));

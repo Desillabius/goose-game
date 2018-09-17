@@ -1,7 +1,6 @@
 import { Player } from './Player';
 import { BoardController } from './BoardController';
-import { first, orderBy } from "lodash";
-import { PlayerTypes } from './PlayerTypes';
+import { first, orderBy, findKey } from "lodash";
 
 export class Game {
 
@@ -14,13 +13,19 @@ export class Game {
     }
 
     addPlayer(name: string): void {
-        this.lastEntryNumber++;
-        let player = new Player(PlayerTypes.human, name);
-        player.entryOrder = this.lastEntryNumber;
-        this.players.push(player);
+        if (!this.checkForAlreadyExistingPlayer(name)) {
+            this.lastEntryNumber++;
+            let player = new Player(name);
+            player.entryOrder = this.lastEntryNumber;
+            this.players.push(player);
+            this.printPlayersList();
+        } else {
+            console.log(name + ': already existing player');
+        }
+        return;
     }
 
-    printLeaderBoard() {
+    printLeaderBoard(): void {
         let leaderBoard = this.getLeaderBoard();
         for (let player of leaderBoard) {
             console.log(player.name, player.points);
@@ -34,6 +39,20 @@ export class Game {
         while (!turnEnded) {
             turnEnded = this.boardController.checkTile(currentMovingPlayer);
         }
+    }
+
+    restart() {
+        this.players = [];
+        this.boardController.resetBoard();
+        this.lastEntryNumber = 0;
+    }
+
+    private checkForAlreadyExistingPlayer(name: string) {
+        return findKey(this.players, ['name', name]);
+    }
+
+    private printPlayersList(): void {
+        console.log('Players: ' + this.players.map(player => player.name));
     }
 
     private getLeaderBoard(): Player[] {

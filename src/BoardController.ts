@@ -14,16 +14,16 @@ export class BoardController {
 
     checkTile(player: Player): boolean {
 
-        let currentTile = this.tileFactory.createTile(Tiles[player.points].type);
+        let currentTile = this.tileFactory.createTile(Tiles[player.points - 1].type);
 
-        console.log(player.name, player.sumDiceRoll(player.lastDiceRoll));
+        return currentTile.handleMove(player);
 
-        let test = currentTile.handleMove(player);
+    }
 
-        debugger;
-
-        return test;
-
+    resetBoard() {
+        for (let tile of Tiles) {
+            tile.currentPlayer = null;
+        }
     }
 
 }

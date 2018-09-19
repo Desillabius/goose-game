@@ -1,6 +1,7 @@
 import { Player } from './Player';
 import { BoardController } from './BoardController';
 import { first, orderBy, findKey } from "lodash";
+import { Tiles } from './Board';
 
 export class Game {
 
@@ -36,9 +37,38 @@ export class Game {
         let currentMovingPlayer = this.getCurrentMovingPlayer();
         let turnEnded = false;
         currentMovingPlayer.rollTheDice();
+
+        if (this.checkUserVictory(currentMovingPlayer)) {
+            return this.gameEnded(currentMovingPlayer);
+        }
+
+        if (this.checkUserBounce(currentMovingPlayer)) {
+            console.log(currentMovingPlayer.name + ' moves from ' + (Tiles.length - (currentMovingPlayer.lastDiceRollSum - (Tiles.length - currentMovingPlayer.points))) + ' to ' + Tiles.length + '.');
+            console.log(currentMovingPlayer.name + ' bounces! ' + currentMovingPlayer.name + ' returns to ' + currentMovingPlayer.points);
+        }
+
         while (!turnEnded) {
             turnEnded = this.boardController.checkTile(currentMovingPlayer);
         }
+    }
+
+    private checkUserBounce(player: Player): boolean {
+        console.log(player.pointsToVictory, player.points);
+        if (player.pointsToVictory < 0) {
+            player.addPoints(-(Tiles.length + player.pointsToVictory));
+            return true;
+        }
+        return false;
+    }
+
+    private gameEnded(player: Player): void {
+        console.log(player.name + ' wins the game!');
+        this.restart();
+        console.log('Game restarted. Good luck!');
+    }
+
+    private checkUserVictory(player: Player): boolean {
+        return player.pointsToVictory == 0;
     }
 
     restart() {

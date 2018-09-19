@@ -19,6 +19,7 @@
     },
     "dependencies": {
         "@types/lodash": "^4.14.116",
+        "ts-lint": "^4.5.1",
         "typescript": "^3.0.3"
     }
 }

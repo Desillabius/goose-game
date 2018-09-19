@@ -33,7 +33,7 @@ npm start
 
 ### Remarks
 
-This is a console-only game, so you should open the web browser console (preferibly Chrome).
+This is a console-only game, so you should open the web browser console (preferably Chrome).
 
 The game is based on a main class called Game, which is already instanciated.
 

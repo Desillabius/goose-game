@@ -39,7 +39,7 @@ export class Tile {
 
         if (kickedPlayer instanceof Player) {
 
-            Tiles[player.points].currentPlayer.points -= player.sumDiceRoll(player.lastDiceRoll);
+            Tiles[player.points].currentPlayer.addPoints(-player.sumDiceRoll(player.lastDiceRoll));
 
         }
 

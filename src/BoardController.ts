@@ -21,9 +21,11 @@ export class BoardController {
     }
 
     resetBoard() {
+
         for (let tile of Tiles) {
             tile.currentPlayer = null;
         }
+
     }
 
 }

@@ -1,5 +1,6 @@
 import { Utils } from './Utils';
 import { sum, last } from "lodash";
+import { Tiles } from './Board';
 
 export class Player {
 
@@ -16,6 +17,7 @@ export class Player {
     entryOrder: number = 0;
     diceRollsHistory: [number[]] = [[]];
     isJumping: boolean = false;
+    pointsToVictory = Tiles.length;
 
     rollTheDice(): void {
         this.incrementTurn(1);
@@ -32,6 +34,11 @@ export class Player {
 
     addPoints(points: number): void {
         this.points += points;
+        this.updatePointsToVictory();
+    }
+
+    updatePointsToVictory() {
+        this.pointsToVictory = Tiles.length - this.points;
     }
 
     sumDiceRoll(lastDiceRoll: number[]): number {

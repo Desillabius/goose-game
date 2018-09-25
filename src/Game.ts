@@ -34,6 +34,10 @@ export class Game {
     }
 
     nextMove(): void {
+        if (this.players.length<2) {
+            console.log('Game cannot start, at least 2 players needed....');
+            return;
+        }
         let currentMovingPlayer = this.getCurrentMovingPlayer();
         let turnEnded = false;
         currentMovingPlayer.rollTheDice();

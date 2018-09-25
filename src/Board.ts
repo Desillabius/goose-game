@@ -41,7 +41,7 @@ export let Tiles: { id: number, type: TilesType, currentPlayer: Player | null }[
     },
     {
         id: 8,
-        type: TilesType.Harmless,
+        type: TilesType.Bridge,
         currentPlayer: null
 
     },

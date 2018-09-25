@@ -2,3 +2,4 @@
 node_modules/
 dist/
 id_buddy.pub
+.DS_Store

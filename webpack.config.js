@@ -1,8 +1,11 @@
+var path = require('path');
 module.exports = {
     mode: "development",
     entry: "./src/index.ts",
     output: {
-        filename: "bundle.js"
+        path: path.resolve(__dirname, "dist"),
+        filename: "bundle.js",
+        sourceMapFilename: "[file].map"
     },
     devtool: 'source-map',
     resolve: {

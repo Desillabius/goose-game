@@ -5,7 +5,7 @@
     "main": "bundle.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
-        "start": "http-server -p 80",
+        "start": "http-server -p 3000",
         "build": "webpack -d --watch",
         "build:prod": "webpack -p",
         "postinstall": "npm run build:prod"
